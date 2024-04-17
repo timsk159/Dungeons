@@ -33,5 +33,9 @@ public:
 	USphereComponent* GetCollisionComp() const { return CollisionComp; }
 	/** Returns ProjectileMovement subobject **/
 	UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
+
+protected: 
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnHitEvent(AActor* OtherActor);
 };
 
