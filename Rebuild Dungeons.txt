@@ -1,0 +1,38 @@
+Rebuild: Dungeons
+
+Explore and clear dungeons to gather resources, recruit wandering adventurers to your cause.
+Rebuild And Survive
+
+World has been destroyed by evil forces who live underground. They have pitted the world with caverns, caves and dungeons to live in.
+They have scorched most of the "overland", preventing most things from growing.
+This means resources are all in the "underland" where they live.
+
+You are running a settlement of survivors, trying to rebuild and survive.
+
+
+
+Dungeon mechanics:
+Stealing ideas from "Extraction Shooters". So basically you get better rewards to longer you explore, but if you die you lose everything.#]
+
+Roguelite progression through dungeons. Items and weapons gathered in a dungeon can be salvaged, repaired and upgraded to use on future adventures
+Parties can be formed by adventurers you recruit, these can perform "patrols" on dungeons you have already cleared to reward general resources
+Clearing dungeons yourself rewards general AND special resources, and claims the land for your settlement
+The further you explore out, the harder the dungeons become, but the greater the rewards
+
+So once you conquered an area there was a chance over time it could be raided by an enemy gang and you'd have to get to that area and defend against a raid
+So you have that with a dungeon but if you completely clear a dungeon you can install seals with special items and that blocks the evil from re-entering
+Which could then allow for the restoration of the ground around the dungeon
+Converting protective barriers and stuff into farm equipement or something
+
+Cause then you could say clear floor 1 of a dungeon, get the occasional raid and a few general items over time but if you go through and clear everything you start to get reclaimed land, and a chance of special items being mined
+
+Town mechanics:
+There are 2 types of resources to collect. "General" and "Special"
+General = Wood, grain, stone etc
+Special = Key items needed for upgrades, buildings. These define the progression curve
+
+
+Loads of potential ideas:
+"reclaim" the overland above dungeons you have Cleared, removed the scorched earth and allowing for general resource growth?
+Multiplayer?
+Metroid-like progression, where some dungeons will only be partially Cleared until you get certain items/abilities to further explore them
