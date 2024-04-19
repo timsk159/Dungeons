@@ -12,6 +12,7 @@
 #include "Engine/LocalPlayer.h"
 #include "Inventory/InventoryComponent.h"
 #include "HealthComponent.h"
+#include "HittableComponent.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -44,6 +45,8 @@ ADungeonsCharacter::ADungeonsCharacter()
 	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+
+	HittableComponent = CreateDefaultSubobject<UHittableComponent>(TEXT("HittableComponent"));
 }
 
 void ADungeonsCharacter::BeginPlay()
@@ -94,6 +97,11 @@ UInventoryComponent* ADungeonsCharacter::GetInventoryComponent() const
 UHealthComponent* ADungeonsCharacter::GetHealthComponent() const
 {
 	return HealthComponent;
+}
+
+UHittableComponent* ADungeonsCharacter::GetHittableComponent() const
+{
+	return HittableComponent;
 }
 
 void ADungeonsCharacter::Move(const FInputActionValue& Value)

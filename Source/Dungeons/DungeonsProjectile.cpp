@@ -3,6 +3,7 @@
 #include "DungeonsProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
+#include "HittableComponent.h"
 
 ADungeonsProjectile::ADungeonsProjectile() 
 {
@@ -38,6 +39,14 @@ void ADungeonsProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr))
 	{
 		OnHitEvent(OtherActor);
+
+		UHittableComponent* hittableComponent = OtherActor->GetComponentByClass<UHittableComponent>();
+		if (hittableComponent != nullptr)
+		{
+			hittableComponent->Hit(this);
+		}
+
+
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
 
 		Destroy();

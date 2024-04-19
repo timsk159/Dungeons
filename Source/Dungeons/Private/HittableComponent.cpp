@@ -32,3 +32,11 @@ void UHittableComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 	// ...
 }
 
+void UHittableComponent::Hit(AActor* OtherActor)
+{
+	if (OtherActor != nullptr)
+	{
+		// Notify that the actor is being picked up
+		OnHit.Broadcast(OtherActor);
+	}
+}
