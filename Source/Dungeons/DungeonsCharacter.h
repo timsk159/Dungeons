@@ -14,6 +14,7 @@ class UInputAction;
 class UInputMappingContext;
 struct FInputActionValue;
 class UInventoryComponent;
+class UHealthComponent;
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
@@ -44,6 +45,9 @@ class ADungeonsCharacter : public ACharacter
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	UInventoryComponent* InventoryComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UHealthComponent* HealthComponent;
 	
 public:
 	ADungeonsCharacter();
@@ -90,5 +94,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	UInventoryComponent* GetInventoryComponent() const;
 
+	UFUNCTION(BlueprintCallable)
+	UHealthComponent* GetHealthComponent() const;
 };
 
