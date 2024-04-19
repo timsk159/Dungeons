@@ -11,6 +11,7 @@
 #include "InputActionValue.h"
 #include "Engine/LocalPlayer.h"
 #include "Inventory/InventoryComponent.h"
+#include "HealthComponent.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -42,7 +43,7 @@ ADungeonsCharacter::ADungeonsCharacter()
 
 	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 
-
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
 }
 
 void ADungeonsCharacter::BeginPlay()
@@ -88,6 +89,11 @@ void ADungeonsCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 UInventoryComponent* ADungeonsCharacter::GetInventoryComponent() const
 {
 	return InventoryComponent;
+}
+
+UHealthComponent* ADungeonsCharacter::GetHealthComponent() const
+{
+	return HealthComponent;
 }
 
 void ADungeonsCharacter::Move(const FInputActionValue& Value)
