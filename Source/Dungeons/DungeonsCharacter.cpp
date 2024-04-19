@@ -85,6 +85,11 @@ void ADungeonsCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 }
 
 
+UInventoryComponent* ADungeonsCharacter::GetInventoryComponent() const
+{
+	return InventoryComponent;
+}
+
 void ADungeonsCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
