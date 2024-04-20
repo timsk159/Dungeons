@@ -46,7 +46,7 @@ void ADungeonsProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor
 			hittableComponent->Hit(this);
 		}
 
-		if (OtherComp->IsSimulatingPhysics())
+		if (OtherComp->IsSimulatingPhysics() && OtherComp->Mobility == EComponentMobility::Movable)
 		{
 			OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
 		}

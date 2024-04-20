@@ -12,7 +12,7 @@ ACollectableItem::ACollectableItem()
 	PrimaryActorTick.bCanEverTick = false;
 
 	PickupComponent = CreateDefaultSubobject<UTP_PickUpComponent>(TEXT("PickupComponent"));
-	PickupComponent->AttachToComponent(RootComponent, FAttachmentTransformRules(EAttachmentRule::KeepRelative, false));
+	RootComponent = PickupComponent;
 }
 
 // Called when the game starts or when spawned
@@ -35,12 +35,16 @@ void ACollectableItem::PickedUp(ADungeonsCharacter* PickUpCharacter)
 
 	//Let BP know we been picked up
 	OnPickedUpEvent(PickUpCharacter);
+	
+	if (bShouldDestroyOnCollect)
+	{
+		Destroy();
+	}
 }
 
-// Called every frame
-void ACollectableItem::Tick(float DeltaTime)
+UTP_PickUpComponent* ACollectableItem::GetPickupComponent() const
 {
-	Super::Tick(DeltaTime);
-
+	return PickupComponent;
 }
+
 

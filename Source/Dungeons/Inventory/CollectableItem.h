@@ -19,9 +19,6 @@ public:
 	// Sets default values for this actor's properties
 	ACollectableItem();
 
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -32,12 +29,18 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnPickedUpEvent(ADungeonsCharacter* PickUpCharacter);
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	TSubclassOf<UItemBase> ItemType;
+
+	UFUNCTION(BlueprintCallable)
+	UTP_PickUpComponent* GetPickupComponent() const;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool bShouldDestroyOnCollect = true;
 
 private:
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere)
 	UTP_PickUpComponent* PickupComponent;
 
 };
